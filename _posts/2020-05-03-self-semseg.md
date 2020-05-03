@@ -11,16 +11,16 @@ author: 朱毅 Amazon Applied Scientist
 
 ![](img/self-semseg-DAsample.png){:width="720"}
 
-然而分割的标注及其昂贵，标一张图片动辄就要几个小时，所以很难构建一个百万甚至千万级别的数据集。因此*如何利用没有标注的数据来提升模型的性能*就变得非常吸引人。
+然而分割的标注及其昂贵，标一张图片动辄就要几个小时，所以很难构建一个百万甚至千万级别的数据集。因此**如何利用没有标注的数据来提升模型的性能**就变得非常吸引人。
 
 
 ## [Improving Semantic Segmentation via Self-Training](https://arxiv.org/abs/2004.14960)
 
 于是我们本文提出了一种简单有效的基于teacher-student的自训练框架，
 
-1. 借助于大量的无标注数据，我们在三个标准数据集（Cityscapes, CamVid和KITTI）上*获得了最好成绩*。
-2. 在只有极少数据的新场景，甚至有新类别的情况下，*模型依然能通过自训练迅速迁移*。
-3. 提出一种新的训练策略，可以在不牺牲分割精度的前提下*提速2倍*。
+1. 借助于大量的无标注数据，我们在三个标准数据集（Cityscapes, CamVid和KITTI）上**获得了最好成绩**。
+2. 在只有极少数据的新场景，甚至有新类别的情况下，**模型依然能通过自训练迅速迁移**。
+3. 提出一种新的训练策略，可以在不牺牲分割精度的前提下**提速2倍**。
 
 ![](img/self-semseg-overview.png){:width="720"}
 
@@ -33,7 +33,7 @@ author: 朱毅 Amazon Applied Scientist
 
 ![](img/self-semseg-cs-sota.png){:width="480"}
 
-同时，在我们的自训练框架下，student模型可以灵活选用不同的网络架构，都能轻松涨点。如下表所示，我们的方法可以在不用额外标注数据的情况下，大幅提高baseline性能，甚至还能超越利用额外标注数据预训练的模型。值得一提的是，*我们训练的实时网络FastSCNN达到了72.5% mIoU的性能，远超[原文](https://arxiv.org/abs/1902.04502) 68.6%和[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg/blob/release/v0.4.0/docs/model_zoo.md) 中提供的69.6%的结果*。
+同时，在我们的自训练框架下，student模型可以灵活选用不同的网络架构，都能轻松涨点。如下表所示，我们的方法可以在不用额外标注数据的情况下，大幅提高baseline性能，甚至还能超越利用额外标注数据预训练的模型。值得一提的是，**我们训练的实时网络FastSCNN达到了72.5% mIoU的性能，远超[原文](https://arxiv.org/abs/1902.04502) 68.6%和[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg/blob/release/v0.4.0/docs/model_zoo.md) 中提供的69.6%的结果**。
 
 ![](img/self-semseg-cs-diff-student.png){:width="480"}
 
