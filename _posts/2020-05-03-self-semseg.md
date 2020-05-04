@@ -33,7 +33,7 @@ author: 朱毅 Amazon Applied Scientist
 
 ![](img/self-semseg-cs-sota.png){:width="480"}
 
-同时，在我们的自训练框架下，student模型可以灵活选用不同的网络架构，都能轻松涨点。如下表所示，我们的方法可以在不用额外标注数据的情况下，大幅提高baseline性能，甚至还能超越利用额外标注数据预训练的模型。值得一提的是，**我们训练的实时网络FastSCNN达到了72.5% mIoU的性能，远超[原文](https://arxiv.org/abs/1902.04502) 68.6%和[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg/blob/release/v0.4.0/docs/model_zoo.md) 中提供的69.6%的结果**。
+同时，在我们的自训练框架下，student模型可以灵活选用不同的网络架构，都能轻松涨点。如下表所示，我们的方法可以在不用额外标注数据的情况下，大幅提高baseline性能，甚至还能超越利用额外标注数据预训练的模型。值得一提的是，**我们训练的实时网络FastSCNN达到了72.5% mIoU的性能，远超[原文](https://arxiv.org/abs/1902.04502)68.6%和[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg/blob/release/v0.4.0/docs/model_zoo.md)中提供的69.6%的结果**。
 
 ![](img/self-semseg-cs-diff-student.png){:width="480"}
 
@@ -55,3 +55,4 @@ author: 朱毅 Amazon Applied Scientist
 ## 后记
 
 语义分割领域一直都推崇网络架构的改进，很少关注数据方面所能带来的提升。这篇论文是我们在语义分割上对无标注数据利用的一次探索，发现不论在精度还是泛化能力上，模型都能得到很大的提高。类似的想法还可以很自然的拓展到实例分割和物体检测上，而且跟模型的改进可以互相补充，得到进一步提高！比如我们最近的另一篇工作，[ResNeSt](https://arxiv.org/abs/2004.08955)，从网络骨干架构的改进上出发，大幅提高了语义分割的精度，[霸榜ADE20K](https://zhuanlan.zhihu.com/p/136105870)，欢迎关注。接下来我们也会尝试合二为一，继续探索更通用的语义分割方法。
+
